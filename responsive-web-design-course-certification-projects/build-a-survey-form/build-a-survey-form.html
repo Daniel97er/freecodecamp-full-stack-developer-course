@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Preferences Survey</title>
+
+  <style>
+    /* Base */
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --background: #071426;
+      --surface: #0d1d32;
+      --border: #294663;
+      --primary: #72b4ff;
+      --primary-strong: #428fe8;
+      --text: #f4f8fd;
+      --text-muted: #b9c9da;
+      --placeholder: #8295aa;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      background: var(--background);
+      color: var(--text);
+    }
+
+    .container {
+      width: min(90%, 760px);
+      margin: 0 auto;
+      padding: 48px 0 24px;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    #title {
+      margin: 0 0 12px;
+      color: var(--primary);
+      font-size: 2.4rem;
+      line-height: 1.2;
+    }
+
+    #description {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--text-muted);
+    }
+
+    /* Form */
+    #survey-form {
+      padding: 36px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    .form-group {
+      margin-bottom: 26px;
+    }
+
+    label,
+    legend {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      background: var(--background);
+      color: var(--text);
+      font: inherit;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: var(--placeholder);
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+      border-color: var(--primary);
+    }
+
+    select {
+      cursor: pointer;
+    }
+
+    /* Choice groups */
+    fieldset {
+      margin: 0 0 26px;
+      padding: 0;
+      border: 0;
+    }
+
+    .choice {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-weight: 400;
+      cursor: pointer;
+    }
+
+    .choice input {
+      width: auto;
+      margin: 0;
+      accent-color: var(--primary);
+    }
+
+    /* Comments */
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .hint {
+      margin: 6px 0 0;
+      color: var(--placeholder);
+      font-size: 0.9rem;
+    }
+
+    /* Submit button */
+    #submit {
+      width: 100%;
+      padding: 13px;
+      border: 0;
+      border-radius: 7px;
+      background: var(--primary-strong);
+      color: #ffffff;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    #submit:hover {
+      background: var(--primary);
+    }
+
+    #submit:focus {
+      outline: 2px solid var(--text);
+      outline-offset: 3px;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .footer p {
+      margin: 0;
+      color: var(--placeholder);
+      font-size: 0.9rem;
+    }
+
+    .footer span {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Small screens */
+    @media (max-width: 600px) {
+      .container {
+        width: 94%;
+        padding-top: 30px;
+      }
+
+      #survey-form {
+        padding: 24px;
+      }
+
+      #title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <!-- Survey introduction -->
+    <header>
+      <h1 id="title">Learning Preferences Survey</h1>
+      <p id="description">
+        Help us understand how people prefer to learn so we can create
+        better learning experiences.
+      </p>
+    </header>
+
+    <!-- Survey fields -->
+    <form id="survey-form">
+      <div class="form-group">
+        <label id="name-label" for="name">Name</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="Enter your name"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label id="email-label" for="email">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="Enter your email address"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label id="number-label" for="number">
+          Hours of learning per week
+        </label>
+        <input
+          id="number"
+          name="learning-hours"
+          type="number"
+          min="1"
+          max="80"
+          placeholder="Enter a number from 1 to 80"
+        >
+        <p class="hint">Enter a value between 1 and 80.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="dropdown">
+          Which subject do you enjoy learning most?
+        </label>
+        <select id="dropdown" name="favorite-subject">
+          <option value="programming">Programming</option>
+          <option value="mathematics">Mathematics</option>
+          <option value="science">Science</option>
+          <option value="languages">Languages</option>
+        </select>
+      </div>
+
+      <fieldset>
+        <legend>How do you usually study?</legend>
+        <label class="choice">
+          <input type="radio" name="study-method" value="reading">
+          Reading
+        </label>
+        <label class="choice">
+          <input type="radio" name="study-method" value="videos">
+          Watching videos
+        </label>
+        <label class="choice">
+          <input type="radio" name="study-method" value="practice">
+          Practicing exercises
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Which learning activities do you find useful?</legend>
+        <label class="choice">
+          <input type="checkbox" name="activity" value="examples">
+          Practical examples
+        </label>
+        <label class="choice">
+          <input type="checkbox" name="activity" value="exercises">
+          Exercises
+        </label>
+        <label class="choice">
+          <input type="checkbox" name="activity" value="projects">
+          Projects
+        </label>
+        <label class="choice">
+          <input type="checkbox" name="activity" value="explanations">
+          Detailed explanations
+        </label>
+      </fieldset>
+
+      <div class="form-group">
+        <label for="comments">Additional comments</label>
+        <textarea
+          id="comments"
+          name="comments"
+          placeholder="Tell us anything else about your learning experience..."
+        ></textarea>
+      </div>
+
+      <button id="submit" type="submit">Submit Survey</button>
+    </form>
+
+    <footer class="footer">
+      <p>Made by <span>D.S.</span></p>
+    </footer>
+  </main>
+</body>
+</html>
