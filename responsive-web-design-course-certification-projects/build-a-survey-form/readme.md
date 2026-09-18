@@ -1,0 +1,1 @@
+These projects are my certification projects for the freeCodeCamp Full Stack Developer curriculum. For each project, I went beyond the required specifications and added substantial improvements, additional functionality, and a more polished design to make the projects feel closer to real-world applications.
