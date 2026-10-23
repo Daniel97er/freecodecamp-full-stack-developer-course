@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #071426;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: radial-gradient(ellipse at top, #19365a, #071426 70%);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Card layout */
+#playing-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px 20px;
+  width: 100%;
+  max-width: 640px;
+  margin: auto;
+}
+
+/* Individual cards */
+.card {
+  display: flex;
+  justify-content: space-between;
+  flex: 0 0 200px;
+  height: 300px;
+  padding: 15px;
+  border: 1px solid #e0d5bc;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #fffdf6, #f0e8d8);
+  box-shadow: 0 10px 24px rgb(0 0 0 / 25%);
+  font-size: 25px;
+}
+
+/* Card corners */
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+.left {
+  align-self: flex-start;
+}
+
+/* Symbols in the center */
+.middle {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  gap: 12px;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.right {
+  align-self: flex-end;
+  transform: rotate(180deg);
+}
+
+/* Suit colors */
+.hearts,
+.diamonds {
+  color: #bd263d;
+}
+
+.spades,
+.clubs {
+  color: #17263a;
+}
+
+/* Mobile layout */
+@media (max-width: 480px) {
+  body {
+    padding: 24px 12px;
+  }
+
+
+  .card {
+    flex-basis: 155px;
+    height: 235px;
+    padding: 12px;
+    font-size: 22px;
+  }
+
+  .middle {
+    font-size: 27px;
+    gap: 9px;
+  }
+}
