@@ -1,0 +1,2 @@
+These projects are my certification projects for the freeCodeCamp Full Stack Developer curriculum. For each project, I went beyond the required specifications and added substantial improvements, additional functionality, and a more polished design to make the projects feel closer to real-world applications.
+<img width="1980" height="1408" alt="1000016055" src="https://github.com/user-attachments/assets/506ddd79-422d-4f91-9b01-afea3d877321" />
