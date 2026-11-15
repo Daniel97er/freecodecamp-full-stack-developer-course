@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover D.S. Lamp, a modern desk lamp designed for comfortable and focused lighting.">
+    <title>D.S. Lamp | Modern Lighting</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body><a class="skip-link" href="#main-content">Skip to content</a>
+
+<header id="header">
+    <a href="#home" class="brand" aria-label="D.S. Lamp home">
+        <img
+            id="header-img"
+            src="https://placehold.co/48x48/102b50/72b4ff?text=DS"
+            alt="D.S. Lamp logo"
+        >
+        <span>D.S. Lamp</span>
+    </a>
+
+    <nav id="nav-bar" aria-label="Main navigation">
+        <a class="nav-link" href="#features">Features</a>
+        <a class="nav-link" href="#technology">Technology</a>
+        <a class="nav-link" href="#order">Order</a>
+    </nav>
+
+    <div class="theme-control">
+        <input type="checkbox" id="dark-mode-toggle">
+        <label for="dark-mode-toggle" class="theme-button">Dark Mode</label>
+    </div>
+</header>
+
+<main id="main-content">
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p class="eyebrow">LIGHTING THE WAY</p>
+            <h1>See your world in a new light.</h1>
+            <p>
+                D.S. Lamp combines modern design with comfortable lighting
+                to create the perfect environment for work, creativity and relaxation.
+            </p>
+            <a href="#features" class="primary-button">Discover the features</a>
+        </div>
+
+        <div class="lamp-illustration" aria-hidden="true">
+            <div class="lamp-light"></div>
+            <div class="lamp-shade"></div>
+            <div class="lamp-neck"></div>
+            <div class="lamp-base"></div>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="section-heading">
+            <p class="eyebrow">DESIGNED FOR EVERYDAY LIFE</p>
+            <h2>Simple. Smart. Comfortable.</h2>
+            <p>Everything you need for a better lighting experience.</p>
+        </div>
+
+        <div class="feature-container">
+            <article class="feature-card">
+                <div class="feature-icon" aria-hidden="true">01</div>
+                <h3>Adjustable Lighting</h3>
+                <p>
+                    Choose the brightness that suits your activity,
+                    from focused work to relaxed evenings.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon" aria-hidden="true">02</div>
+                <h3>Modern Design</h3>
+                <p>
+                    A clean and minimal appearance that fits naturally
+                    into different working and living spaces.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon" aria-hidden="true">03</div>
+                <h3>Everyday Comfort</h3>
+                <p>
+                    Designed to provide comfortable illumination
+                    whenever you need a little more light.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section id="technology" class="section technology-section">
+        <div class="section-heading">
+            <p class="eyebrow">A CLOSER LOOK</p>
+            <h2>Discover the details.</h2>
+            <p>
+                Explore the design and features of D.S. Lamp.
+            </p>
+        </div>
+
+        <div class="video-container">
+            <video id="video" controls preload="metadata">
+                <source src="product-demo.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </div>
+    </section>
+
+    <section id="order" class="section order-section">
+        <div class="order-content">
+            <p class="eyebrow">STAY INFORMED</p>
+            <h2>Be the first to know.</h2>
+            <p>
+                Enter your email address to receive more information
+                about D.S. Lamp and future updates.
+            </p>
+
+            <form
+                id="form"
+                action="https://www.freecodecamp.org/email-submit"
+                method="post"
+            >
+                <label for="email">Your email address</label>
+
+                <div class="form-controls">
+                    <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        required
+                    >
+                    <input id="submit" type="submit" value="Get updates">
+                </div>
+            </form>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Made by <span class="signature">D.S.</span></p>
+</footer>
+
+</body>
+</html>
