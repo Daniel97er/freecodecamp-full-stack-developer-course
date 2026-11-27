@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#071426">
+    <meta name="description" content="A simple and accessible Markdown to HTML converter.">
+    <title>Markdown to HTML Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#markdown-input">Skip to converter</a>
+
+    <header class="page-header">
+        <div class="header-content">
+            <div>
+                <p class="eyebrow">TEXT CONVERSION TOOL</p>
+                <h1>Markdown Converter</h1>
+                <p class="subtitle">
+                    Transform your Markdown into clean HTML.
+                </p>
+            </div>
+
+            <button
+                id="theme-toggle"
+                type="button"
+                aria-label="Switch to light mode"
+                aria-pressed="false"
+            >
+                <span id="theme-icon" aria-hidden="true">☀</span>
+                <span id="theme-label">Light Mode</span>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="container" aria-label="Markdown converter">
+
+            <div class="container">
+                <div class="section-heading">
+                    <span class="step-number" aria-hidden="true">01</span>
+                    <h2>Markdown Input</h2>
+                </div>
+
+                <label for="markdown-input">
+                    Enter your Markdown text
+                </label>
+
+                <textarea
+                    id="markdown-input"
+                    placeholder="# Your heading&#10;&#10;Write your Markdown here..."
+                    spellcheck="false"
+                    aria-describedby="input-help"
+                ></textarea>
+
+                <p id="input-help" class="help-text">
+                    Enter Markdown syntax to see the converted result.
+                </p>
+            </div>
+
+            <div class="container">
+                <div class="section-heading">
+                    <span class="step-number" aria-hidden="true">02</span>
+                    <h2>Raw HTML Output</h2>
+                </div>
+
+                <div
+                    id="html-output"
+                    role="region"
+                    aria-label="Generated HTML code"
+                    aria-live="polite"
+                    tabindex="0"
+                ></div>
+            </div>
+
+            <div class="container">
+                <div class="section-heading">
+                    <span class="step-number" aria-hidden="true">03</span>
+                    <h2>HTML Preview</h2>
+                </div>
+
+                <div
+                    id="preview"
+                    role="region"
+                    aria-label="Rendered HTML preview"
+                ></div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>Designed &amp; Modified by <span>D.S.</span></p>
+        <p class="footer-subtitle">Simple tools. Clear results.</p>
+    </footer>
+</body>
+
+</html>
