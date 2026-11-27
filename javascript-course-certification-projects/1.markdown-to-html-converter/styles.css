@@ -1,0 +1,341 @@
+:root {
+    color-scheme: dark;
+
+    --background: #071426;
+    --surface: #10243d;
+    --surface-light: #172f4d;
+    --border: #294766;
+    --primary: #72b4ff;
+    --primary-hover: #9acaff;
+    --text: #f0f5fc;
+    --text-muted: #b3c4d8;
+    --output-background: #091a2d;
+    --shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+body.light-mode {
+    color-scheme: light;
+
+    --background: #edf3fa;
+    --surface: #ffffff;
+    --surface-light: #e7f0fa;
+    --border: #c3d3e5;
+    --primary: #145da0;
+    --primary-hover: #0d477d;
+    --text: #172b42;
+    --text-muted: #465c73;
+    --output-background: #f3f7fc;
+    --shadow: 0 12px 35px rgba(25, 55, 85, 0.10);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    transition: background 0.2s, color 0.2s;
+}
+
+button,
+textarea {
+    font: inherit;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 15px;
+    z-index: 10;
+    padding: 10px 16px;
+    border-radius: 6px;
+    background: var(--primary);
+    color: #071426;
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    top: 15px;
+}
+
+.page-header {
+    padding: 35px 5%;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.header-content {
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    margin: 0 auto;
+}
+
+.eyebrow {
+    margin: 0 0 5px;
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.2;
+}
+
+.subtitle {
+    margin: 10px 0 0;
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+#theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface-light);
+    color: var(--text);
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+#theme-toggle:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+#theme-icon {
+    font-size: 1.2rem;
+}
+
+main {
+    width: 100%;
+    max-width: 1500px;
+    flex: 1;
+    margin: 0 auto;
+    padding: 45px 5%;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 22px;
+}
+
+.container {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.step-number {
+    display: flex;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: var(--surface-light);
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.15rem;
+}
+
+label {
+    margin-bottom: 9px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+#markdown-input,
+#html-output,
+#preview {
+    width: 100%;
+    min-height: 250px;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--output-background);
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+#markdown-input {
+    resize: vertical;
+}
+
+#markdown-input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.8;
+}
+
+#html-output {
+    overflow: auto;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-family: Consolas, monospace;
+}
+
+#preview {
+    overflow-wrap: anywhere;
+}
+
+#preview img {
+    max-width: 100%;
+    height: auto;
+}
+
+#preview a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+#preview blockquote {
+    margin: 12px 0;
+    padding: 10px 15px;
+    border-left: 4px solid var(--primary);
+    background: var(--surface-light);
+}
+
+.help-text {
+    margin: 12px 0 0;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+button:focus-visible,
+textarea:focus-visible,
+#html-output:focus-visible,
+.skip-link:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+
+footer {
+    padding: 25px 20px;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+footer span {
+    color: var(--primary);
+    letter-spacing: 2px;
+}
+
+.footer-subtitle {
+    margin-top: 5px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: normal;
+}
+
+@media (max-width: 1050px) {
+    #container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .container:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 650px) {
+    .page-header {
+        padding: 25px 5%;
+    }
+
+    .header-content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    main {
+        padding: 30px 5%;
+    }
+
+    #container {
+        grid-template-columns: 1fr;
+    }
+
+    .container:last-child {
+        grid-column: auto;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    #markdown-input,
+    #html-output,
+    #preview {
+        min-height: 200px;
+    }
+}
+
+@media (max-width: 380px) {
+    #theme-toggle {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .container {
+        padding: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
